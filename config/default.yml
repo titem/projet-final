@@ -3,7 +3,7 @@ server:
   port: 4443
 swag:
   info:
-    title: New Web's Technologies course with Hapiness
+    title: Find the best Nursery with Hapiness
 mongodb:
   host: 0.0.0.0
   port: 27017

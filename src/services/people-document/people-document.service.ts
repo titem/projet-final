@@ -11,9 +11,10 @@ import { mergeStatic } from 'rxjs/operators/merge';
 import { PeopleModel } from '../../models';
 import { People } from '../../interfaces';
 import { Config } from '@hapiness/config';
+import { DocumentService } from '../../interfaces/documentService';
 
 @Injectable()
-export class PeopleDocumentService {
+export class PeopleDocumentService implements DocumentService<People> {
     // private property to store document instance
     private _document: any;
 

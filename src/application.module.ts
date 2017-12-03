@@ -12,15 +12,26 @@ import {
     PostCreatePeopleRoute,
     PutUpdatePeopleRoute,
     PostCreateUserRoute,
+    PostCreateNurseryRoute,
+    GetOneNurseryRoute
 } from './routes';
-import { PeopleDocumentService, PeopleService, UserDocumentService, UserService } from './services';
-import { PeopleModel, UserModel } from './models';
+import {
+    PeopleDocumentService,
+    PeopleService,
+    UserDocumentService,
+    UserService,
+    NurseryDocumentService,
+    NurseryService
+} from './services';
+import { PeopleModel, UserModel, NurseryModel } from './models';
+
 
 
 // factory to declare dependency between PeopleDocumentService and MongoClientService
 // we use it to be sure that MongoClientService will be loaded before PeopleDocumentService
 const peopleDocumentFactory = (mongoClientService: MongoClientService) => new PeopleDocumentService(mongoClientService);
 const userDocumentFactory = (mongoClientService: MongoClientService) => new UserDocumentService(mongoClientService);
+const nurseryDocumentFactory = (mongoClientService: MongoClientService) => new NurseryDocumentService(mongoClientService);
 
 @HapinessModule({
     version: '1.0.0',
@@ -33,14 +44,18 @@ const userDocumentFactory = (mongoClientService: MongoClientService) => new User
         GetHelloWorldRoute, GetAllPeopleRoute, GetOnePeopleRoute, PostCreatePeopleRoute, PutUpdatePeopleRoute, DeleteOnePeopleRoute,
         PeopleModel,
         PostCreateUserRoute,
-        UserModel
+        UserModel,
+        GetOneNurseryRoute, PostCreateNurseryRoute,
+        NurseryModel
     ],
     providers: [
         HttpServerService,
         PeopleService,
         UserService,
+        NurseryService,
         { provide: PeopleDocumentService, useFactory: peopleDocumentFactory, deps: [MongoClientService] },
         { provide: UserDocumentService, useFactory: userDocumentFactory, deps: [MongoClientService] },
+        { provide: NurseryDocumentService, useFactory: nurseryDocumentFactory, deps: [MongoClientService] }
     ]
 })
 export class ApplicationModule implements OnStart, OnError {

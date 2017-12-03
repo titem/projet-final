@@ -10,9 +10,10 @@ import {_throw} from 'rxjs/observable/throw';
 import { flatMap, map, tap } from 'rxjs/operators';
 import { Observable } from 'rxjs/Observable';
 import { MongooseDocument } from 'mongoose';
+import { DocumentService } from '../../interfaces/documentService';
 
 @Injectable()
-export class UserDocumentService {
+export class UserDocumentService implements DocumentService<User> {
     // private property to store document instance
     private _document: any;
 
@@ -26,6 +27,14 @@ export class UserDocumentService {
             adapter: 'mongoose',
             options: Config.get('mongodb')
         }, UserModel);
+    }
+
+    find(): Observable<User[] | void> {
+        return undefined;
+    }
+
+    findById(id: string): Observable<void | User> {
+        return undefined;
     }
 
     create(user: User): Observable<User> {
@@ -42,5 +51,13 @@ export class UserDocumentService {
                 map((doc: MongooseDocument) => doc.toJSON() as User),
                 tap((u: User) => u.password = '')
             );
+    }
+
+    findByIdAndUpdate(id: string, document: User): Observable<User> {
+        return undefined;
+    }
+
+    findByIdAndRemove(id: string): Observable<User> {
+        return undefined;
     }
 }
