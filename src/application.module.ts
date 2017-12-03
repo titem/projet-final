@@ -5,19 +5,22 @@ import { Config } from '@hapiness/config';
 import { MongoClientService, MongoModule } from '@hapiness/mongo';
 import { Observable } from 'rxjs/Observable';
 import {
-    GetHelloWorldRoute,
+    DeleteOnePeopleRoute,
     GetAllPeopleRoute,
+    GetHelloWorldRoute,
     GetOnePeopleRoute,
     PostCreatePeopleRoute,
     PutUpdatePeopleRoute,
-    DeleteOnePeopleRoute
+    PostCreateUserRoute,
 } from './routes';
-import { PeopleService, PeopleDocumentService } from './services';
-import { PeopleModel } from './models';
+import { PeopleDocumentService, PeopleService, UserDocumentService, UserService } from './services';
+import { PeopleModel, UserModel } from './models';
+
 
 // factory to declare dependency between PeopleDocumentService and MongoClientService
 // we use it to be sure that MongoClientService will be loaded before PeopleDocumentService
 const peopleDocumentFactory = (mongoClientService: MongoClientService) => new PeopleDocumentService(mongoClientService);
+const userDocumentFactory = (mongoClientService: MongoClientService) => new UserDocumentService(mongoClientService);
 
 @HapinessModule({
     version: '1.0.0',
@@ -28,12 +31,16 @@ const peopleDocumentFactory = (mongoClientService: MongoClientService) => new Pe
     ],
     declarations: [
         GetHelloWorldRoute, GetAllPeopleRoute, GetOnePeopleRoute, PostCreatePeopleRoute, PutUpdatePeopleRoute, DeleteOnePeopleRoute,
-        PeopleModel
+        PeopleModel,
+        PostCreateUserRoute,
+        UserModel
     ],
     providers: [
         HttpServerService,
         PeopleService,
-        { provide: PeopleDocumentService, useFactory: peopleDocumentFactory, deps: [MongoClientService] }
+        UserService,
+        { provide: PeopleDocumentService, useFactory: peopleDocumentFactory, deps: [MongoClientService] },
+        { provide: UserDocumentService, useFactory: userDocumentFactory, deps: [MongoClientService] },
     ]
 })
 export class ApplicationModule implements OnStart, OnError {

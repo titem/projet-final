@@ -51,7 +51,7 @@
             "name": "Titem"
         }
     ],
-    "license": "SEE LICENSE IN ",
+    "license": "SEE LICENSE IN https://github.com/titem/projet-final-03/blob/backend/LICENSE.md",
     "dependencies": {
         "@hapiness/biim": "^1.4.0",
         "@hapiness/config": "^1.1.0",
