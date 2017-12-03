@@ -1,0 +1,80 @@
+.item-box {
+  top:10px;
+  left: 60px;
+  width: 1200px;
+  height: 300px;
+  background: rgba(0,0,0,0.5);
+  box-shadow: -1px 4px 26px 2px rgba(0,0,0,0.75 );
+}
+.avatar {
+  width: 300px;
+  height: 200px;
+  border-radius: 10%;
+  top: -50%;
+  left: calc(50% - 50px);
+}
+li:not(:last-child) {
+  margin-bottom: 20px;
+}
+.label{
+  color: white;
+}
+
+.nb-btn-circle{
+  text-decoration: none;
+  outline: none!important;
+  position: relative;
+  display: inline-block;
+  height: 80px;
+  width: 80px;
+  margin: 0 10px 10px 0;
+  color: white;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -khtml-border-radius: 50%;
+  border: 1px solid #ddd;
+  background: #00897B;
+  transition:all 0.4s ease-in-out;
+}
+.nb-btn-circle:hover{
+  background: #FF8A65;
+  border-color: #E91E63;
+  color: #fff;
+}
+.nb-btn-circle:focus{
+  color: darkslategrey;
+  border-color: #E91E63;
+}
+.nb-btn-circle .fa {
+  float: left;
+  height: 24px;
+  width: 60%;
+  margin-top: 15px;
+  margin-left: 10px;
+  font-size: 24px;
+}
+.nb-btn-circle p{
+  float: left;
+  width: 100%;
+  margin: 0;
+  font-size: 11px;
+  text-align: center;
+}
+.nb-btn-circle .indicator-dot {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  height: 16px;
+  width: 16px;
+  font-size: 10px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 14px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -khtml-border-radius: 50%;
+  -moz-border-radius: 50%;
+  color: #fff;
+  background-color: #D9534F;
+  background-image: none;
+}

@@ -1,3 +1,36 @@
-<p>
-  list-garderie works!
-</p>
+<ul class="list-group">
+  <li class="item-box list-group-item form-group row" *ngFor="let org of Orgs">
+    <div class="col-4">
+      <img class="avatar" src="{{org.img}}">
+    </div>
+    <div class="col-8">
+      <br><br>
+      <div class="row">
+        <div class="col-form-label label">Posté par :
+          <a> {{org.name}} </a></div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-form-label label">Nom :
+          <a> {{org.name}} </a> </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-form-label label">Adresse:
+          <a> {{org.adresse}} </a> </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-10"></div>
+        <div class="col-2">
+          <a href="#" class="nb-btn-circle">
+            <img src="../../assets/img/5982-200.png" class="fa">
+            <p>Comments</p>
+            <span class="indicator-dot">6</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </li>
+
+</ul>

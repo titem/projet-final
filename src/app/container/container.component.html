@@ -1,43 +1,9 @@
 <div class="list-background">
   <br>
  <div class="row">
-   <ul class="list-group">
-     <li class="item-box list-group-item form-group row" *ngFor="let org of Orgs">
-         <div class="col-4">
-           <img class="avatar" src="{{org.img}}">
-         </div>
-         <div class="col-8">
-             <div class="row">
-               <div class="col-form-label label">Posté par :
-               <a> {{org.name}} </a></div>
-             </div>
-           <br>
-           <div class="row">
-             <div class="col-form-label label">Nom :
-               <a> {{org.name}} </a> </div>
-           </div>
-           <br>
-           <div class="row">
-             <div class="col-form-label label">Adresse:
-               <a> {{org.adresse}} </a> </div>
-           </div>
-           <br>
-           <div class="row">
-             <div class="col-11"></div>
-             <div class="col-1">
-               <img class="cover2" src="../../assets/img/7ncfn-r84cu.svg">
-
-             </div>
-           </div>
-         </div>
-
-
-     </li>
-
-   </ul>
+   <app-org-details></app-org-details>
  </div>
  <div class="row">
-
  </div>
 
 </div>

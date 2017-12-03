@@ -8,31 +8,3 @@
   background-repeat: no-repeat;
 
 }
-.item-box {
-  top:10px;
-  left: 60px;
-  width: 1200px;
-  height: 300px;
-  background: rgba(0,0,0,0.5);
-  box-shadow: -1px 4px 26px 2px rgba(0,0,0,0.75 );
-}
-.avatar {
-  width: 300px;
-  height: 200px;
-  border-radius: 10%;
-  top: -50%;
-  left: calc(50% - 50px);
-}
-li:not(:last-child) {
-  margin-bottom: 20px;
-}
-.cover2 {
-  background: #00897B;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  margin-right: 10px;
-}
-.label{
-  color: white;
-}
