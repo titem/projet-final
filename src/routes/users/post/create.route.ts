@@ -13,6 +13,9 @@ import * as Joi from 'joi';
             payload: Joi.object().keys({
                 email: Joi.string().email().required(),
                 fullname: Joi.string().required(),
+                phone: Joi.string(),
+                city: Joi.string(),
+                avatar: Joi.string().uri(),
                 password: Joi.string().required()
             }).required()
         },
@@ -27,13 +30,16 @@ import * as Joi from 'joi';
                     id: Joi.string().required(),
                     email: Joi.string().email().required(),
                     fullname: Joi.string().required(),
+                    phone: Joi.string(),
+                    city: Joi.string(),
+                    avatar: Joi.string().uri(),
                     password: Joi.string().allow('').max(0)
                 })
             }
         },
         description: 'Create one user',
         notes: 'Create a new user and return it',
-        tags: ['api', 'user']
+        tags: ['api', 'users']
     }
 })
 export class PostCreateUserRoute implements OnPost {

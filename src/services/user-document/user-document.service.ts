@@ -49,4 +49,19 @@ export class UserDocumentService extends AbstractDocumentService<User> {
                 tap((u: User) => u.password = '')
             );
     }
+
+    /**
+     * Returns an user maching the id and hides his password
+     * @param {String} id
+     * @returns {Observable<void | User>}
+     */
+    findById(id: String): Observable<void | User> {
+        return super.findById(id).pipe(
+            tap((user: User) =>
+                !!user ?
+                    user.password = '' :
+                    undefined
+            )
+        );
+    }
 }

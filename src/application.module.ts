@@ -11,6 +11,7 @@ import {
     GetOnePeopleRoute,
     PostCreatePeopleRoute,
     PutUpdatePeopleRoute,
+    GetOneUserRoute,
     PostCreateUserRoute,
     PostCreateNurseryRoute,
     GetOneNurseryRoute,
@@ -44,7 +45,7 @@ const nurseryDocumentFactory = (mongoClientService: MongoClientService) => new N
     declarations: [
         GetHelloWorldRoute, GetAllPeopleRoute, GetOnePeopleRoute, PostCreatePeopleRoute, PutUpdatePeopleRoute, DeleteOnePeopleRoute,
         PeopleModel,
-        PostCreateUserRoute,
+        GetOneUserRoute, PostCreateUserRoute,
         UserModel,
         GetOneNurseryRoute, PostCreateNurseryRoute, PostCreateNurseryCommentRoute,
         NurseryModel
