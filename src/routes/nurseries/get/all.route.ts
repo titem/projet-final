@@ -18,7 +18,7 @@ import * as Joi from 'joi';
                         name: Joi.string().required(),
                         email: Joi.string().email(),
                         phone: Joi.string(),
-                        website: Joi.string(),
+                        website: Joi.string().uri(),
                         address: Joi.object().keys({
                             street: Joi.string().required(),
                             postalCode: Joi.number().required(),

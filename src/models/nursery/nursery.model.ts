@@ -30,7 +30,7 @@ export class NurseryModel extends Model {
                 required: true
             },
             email: String,
-            tel: String,
+            phone: String,
             website: String,
             address: {
                 street: {
