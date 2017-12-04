@@ -1,25 +1,36 @@
-import { HapinessHTTPHandlerResponse } from '@hapiness/core/extensions/http-server';
-import { OnPost, Request, Route } from '@hapiness/core';
+import { OnPut, Request, Route } from '@hapiness/core';
 
-import { NurseryService } from '../../../../services';
-import { Comment } from '../../../../interfaces';
+import { NurseryService } from '../../../services';
+import { Nursery } from '../../../interfaces';
 
 import { Observable } from 'rxjs/Observable';
 import * as Joi from 'joi';
 
 @Route({
-    path: '/api/nurseries/{id}/comments',
-    method: 'POST',
+    path: '/api/nurseries/{id}',
+    method: 'PUT',
     config: {
         validate: {
             params: {
                 id: Joi.string().required()
             },
             payload: Joi.object().keys({
-                user: Joi.string().required(),
-                rating: Joi.number().required(),
-                text: Joi.string().required()
-            }).required()
+                name: Joi.string().required(),
+                email: Joi.string().email().required(),
+                phone: Joi.string(),
+                website: Joi.string(),
+                address: Joi.object().keys({
+                    street: Joi.string().required(),
+                    postalCode: Joi.number().required(),
+                    city: Joi.string().required()
+                }).required(),
+                description: Joi.string(),
+                staffNumber: Joi.number(),
+                openingHours: Joi.string(),
+                admissionConditions: Joi.string(),
+                capacity: Joi.number(),
+                ageLimits: Joi.string()
+            })
         },
         payload: {
             output: 'data',
@@ -28,7 +39,7 @@ import * as Joi from 'joi';
         },
         response: {
             status: {
-                201: Joi.object().keys({
+                200: Joi.object().keys({
                     id: Joi.string().required(),
                     name: Joi.string().required(),
                     email: Joi.string().email(),
@@ -47,19 +58,19 @@ import * as Joi from 'joi';
                     ageLimits: Joi.string(),
                     comments: Joi.array().items(Joi.object().keys({
                         id: Joi.string(),
-                        user: Joi.any(),
+                        user: Joi.any().required(),
                         rating: Joi.number().required(),
                         text: Joi.string().required()
                     }))
                 })
             }
         },
-        description: 'Create a comment and return the nursery',
-        notes: 'Create one comment for a nursery identified by id passed as parameter',
-        tags: ['api', 'nurseries', 'comments']
+        description: 'Update one nursery',
+        notes: 'Update the nursery for the given id in path parameter and return it',
+        tags: ['api', 'nurseries']
     }
 })
-export class PostCreateNurseryCommentRoute implements OnPost {
+export class PutUpdateNurseryRoute implements OnPut {
     /**
      * Class constructor
      * @param _nurseryService
@@ -68,10 +79,10 @@ export class PostCreateNurseryCommentRoute implements OnPost {
     }
 
     /**
-     * OnPost implementation
+     * OnPut implementation
      * @param request
      */
-    onPost(request: Request): Observable<HapinessHTTPHandlerResponse> {
-        return this._nurseryService.createComment(request.params.id, request.payload as Comment);
+    onPut(request: Request): Observable<Nursery> {
+        return this._nurseryService.update(request.params.id, request.payload);
     }
 }

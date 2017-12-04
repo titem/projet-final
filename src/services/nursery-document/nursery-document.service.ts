@@ -73,5 +73,16 @@ export class NurseryDocumentService extends AbstractDocumentService<Nursery> {
             )
     }
 
+    removeCommentById(id: string, commentId: string): Observable<Nursery> {
+        return fromPromise(this._document.findByIdAndUpdate(id, { $pull: { comments: {_id: commentId} } }, { new: true}))
+            .pipe(
+                flatMap((doc: MongooseDocument) =>
+                    !!doc ?
+                        of(doc.toJSON() as Nursery) :
+                        of(undefined)
+                )
+            )
+    }
+
 }
 

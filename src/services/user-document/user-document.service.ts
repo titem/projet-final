@@ -55,7 +55,7 @@ export class UserDocumentService extends AbstractDocumentService<User> {
      * @param {String} id
      * @returns {Observable<void | User>}
      */
-    findById(id: String): Observable<void | User> {
+    findById(id: string): Observable<void | User> {
         return super.findById(id).pipe(
             tap((user: User) =>
                 !!user ?

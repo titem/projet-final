@@ -1,4 +1,5 @@
 import { User } from './user';
+import { Address } from './people';
 
 export interface Nursery {
     id?: string,
@@ -14,12 +15,6 @@ export interface Nursery {
     capacity?: number,
     ageLimits?: string,
     comments?: Comment[]
-}
-
-export interface Address {
-    street: string;
-    postalCode: number;
-    city: string;
 }
 
 export interface Comment {
