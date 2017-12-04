@@ -62,7 +62,7 @@ export class NurseryDocumentService extends AbstractDocumentService<Nursery> {
             );
     }
 
-    addComment(id: string, comment: Comment): Observable<Nursery> {
+    createComment(id: string, comment: Comment): Observable<Nursery> {
         return fromPromise(this._document.findByIdAndUpdate(id, { $push: { comments: comment } }, { new: true }))
             .pipe(
                 flatMap((doc: MongooseDocument) =>

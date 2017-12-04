@@ -13,7 +13,8 @@ import {
     PutUpdatePeopleRoute,
     PostCreateUserRoute,
     PostCreateNurseryRoute,
-    GetOneNurseryRoute
+    GetOneNurseryRoute,
+    PostCreateNurseryCommentRoute
 } from './routes';
 import {
     PeopleDocumentService,
@@ -45,7 +46,7 @@ const nurseryDocumentFactory = (mongoClientService: MongoClientService) => new N
         PeopleModel,
         PostCreateUserRoute,
         UserModel,
-        GetOneNurseryRoute, PostCreateNurseryRoute,
+        GetOneNurseryRoute, PostCreateNurseryRoute, PostCreateNurseryCommentRoute,
         NurseryModel
     ],
     providers: [

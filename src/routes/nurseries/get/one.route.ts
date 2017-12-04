@@ -33,7 +33,7 @@ import { NurseryService } from '../../../services/nursery';
                     capacity: Joi.number(),
                     ageLimits: Joi.string(),
                     comments: Joi.array().items(Joi.object().keys({
-                        _id: Joi.any(),
+                        id: Joi.string(),
                         user: Joi.object().keys({
                             id: Joi.string().required(),
                             fullname: Joi.string().required(),
