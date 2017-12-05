@@ -16,20 +16,21 @@ import * as Joi from 'joi';
                     Joi.object().keys({
                         id: Joi.string().required(),
                         name: Joi.string().required(),
-                        email: Joi.string().email(),
-                        phone: Joi.string(),
-                        website: Joi.string().uri(),
+                        img: Joi.string().allow(''),
+                        email: Joi.string().email().allow(''),
+                        phone: Joi.string().allow(''),
+                        website: Joi.string().uri().allow(''),
                         address: Joi.object().keys({
                             street: Joi.string().required(),
                             postalCode: Joi.number().required(),
                             city: Joi.string().required()
                         }).required(),
-                        description: Joi.string(),
+                        description: Joi.string().allow(''),
                         staffNumber: Joi.number(),
-                        openingHours: Joi.string(),
-                        admissionConditions: Joi.string(),
+                        openingHours: Joi.string().allow(''),
+                        admissionConditions: Joi.string().allow(''),
                         capacity: Joi.number(),
-                        ageLimits: Joi.string(),
+                        ageLimits: Joi.string().allow(''),
                         comments: Joi.array()
 
                     })

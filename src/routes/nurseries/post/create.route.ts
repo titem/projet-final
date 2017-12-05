@@ -12,6 +12,7 @@ import * as Joi from 'joi';
         validate: {
             payload: Joi.object().keys({
                 name: Joi.string().required(),
+                img: Joi.string(),
                 email: Joi.string().email(),
                 phone: Joi.string(),
                 website: Joi.string().uri(),
@@ -38,6 +39,7 @@ import * as Joi from 'joi';
                 201: Joi.object().keys({
                     id: Joi.string().required(),
                     name: Joi.string().required(),
+                    img: Joi.string(),
                     email: Joi.string().email(),
                     phone: Joi.string(),
                     website: Joi.string().uri(),

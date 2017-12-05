@@ -4,6 +4,7 @@ import { Address } from './people';
 export interface Nursery {
     id?: string,
     name: string,
+    img?: string,
     email?: string,
     phone?: string,
     website?: string,

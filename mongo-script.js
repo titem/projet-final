@@ -5,6 +5,7 @@ db.nurseries.insertMany(
   [
     {
       "name": "Hélicie",
+      "img": "",
       "email": "helicie@wanadoo.fr",
       "phone": "06 45 12 45 35",
       "website": "",
@@ -23,6 +24,7 @@ db.nurseries.insertMany(
     },
     {
       "name": "Le sentier des merveilles",
+      "img": "",
       "email": "le.santier@webmail.com",
       "phone": "06 73 56 31 64",
       "website": "",
@@ -41,6 +43,7 @@ db.nurseries.insertMany(
     },
     {
       "name": "Crèche les Acacias",
+      "img": "",
       "email": "acacias-creche@orange.fr",
       "phone": "06 64 15 12 34",
       "website": "",
@@ -59,6 +62,7 @@ db.nurseries.insertMany(
     },
     {
       "name": "La souris verte",
+      "img": "",
       "email": "souris-verte@orange.fr",
       "phone": "06 56 91 45 00",
       "website": "",

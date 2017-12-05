@@ -16,7 +16,8 @@ import * as Joi from 'joi';
             },
             payload: Joi.object().keys({
                 name: Joi.string().required(),
-                email: Joi.string().email().required(),
+                img: Joi.string(),
+                email: Joi.string().email(),
                 phone: Joi.string(),
                 website: Joi.string().uri(),
                 address: Joi.object().keys({
@@ -42,6 +43,7 @@ import * as Joi from 'joi';
                 200: Joi.object().keys({
                     id: Joi.string().required(),
                     name: Joi.string().required(),
+                    img: Joi.string(),
                     email: Joi.string().email(),
                     phone: Joi.string(),
                     website: Joi.string().uri(),

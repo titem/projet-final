@@ -29,6 +29,7 @@ export class NurseryModel extends Model {
                 type: String,
                 required: true
             },
+            img: String,
             email: String,
             phone: String,
             website: String,
