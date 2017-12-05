@@ -32,6 +32,7 @@ export class OrgFormComponent implements OnInit {
       condition: new FormControl(''),
       desc: new FormControl(''),
       capacity: new FormControl(''),
+      effect: new FormControl(''),
       photo: new FormControl('')
     } );
 
@@ -49,11 +50,12 @@ export class OrgFormComponent implements OnInit {
                                 this.formOrg.get('site').value,
                                 this.adr,
                                 this.formOrg.get('desc').value,
-                                this.formOrg.get('capacity').value,
-                                '',
+                                this.formOrg.get('effect').value,
                                 this.formOrg.get('horraire').value,
                                 this.formOrg.get('condition').value,
-                                this.formOrg.get('capacity').value, null);
+                                this.formOrg.get('capacity').value,
+                                this.formOrg.get('age').value,
+                                null);
 
     this.orgService.createOrg(this.org);
     this.router.navigate(['espaceCreche/list']);

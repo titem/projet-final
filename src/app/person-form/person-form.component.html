@@ -13,20 +13,19 @@
   <br>
   <div class="row" >
     <div class="form-box">
-      <form>
+      <form [formGroup]="formCreate" (ngSubmit)="editer()">
         <div class="form-group row">
           <label class="label2" *ngIf="mode == 1">Nouveau Profil</label>
-          <img class="avatar" *ngIf="mode == 2" src="../../assets/img/font3.jpg">
+          <img class="avatar" *ngIf="mode == 2" src="{{user.img}}">
         </div>
         <div class="form-group row">
           <label class="col-6">Nom complet *</label>
           <label class="col-6"  *ngIf="mode == 2" class="labelInfo">{{user.nom}}</label>
           <input
             *ngIf="mode == 1"
-            [ngModel]="user.nom"
+            formControlName="nom"
             class="form-control"
             type="text"
-            name="name"
             placeholder="nom prénom">
         </div>
         <div class="form-group row">
@@ -34,11 +33,9 @@
           <label class="col-6" *ngIf="mode == 2" class="labelInfo">{{user.ville}}</label>
           <input
             *ngIf="mode == 1"
-            [ngModel]="user.ville"
+            formControlName="ville"
             class="form-control"
-            type="text"
-            name="name"
-            placeholder="ville">
+            type="text">
         </div>
         <div class="form-group row">
           <label class="col-6">Téléphone</label>
@@ -46,10 +43,8 @@
           <input
             *ngIf="mode == 1"
             class="form-control"
-            [ngModel]="user.tel"
-            type="text"
-            name="name"
-            placeholder="Téléphone">
+            formControlName="tel"
+            type="text">
         </div>
         <div class="form-group row">
           <label class="col-6">Email *</label>
@@ -57,9 +52,8 @@
           <input
             *ngIf="mode == 1"
             class="form-control"
-            [ngModel]="user.email"
+            formControlName="email"
             type="email"
-            name="email"
             placeholder="email">
         </div>
         <div class="form-group row" *ngIf="mode == 1">
@@ -67,8 +61,6 @@
           <input
             class="form-control"
             type="email"
-
-            name="confirm"
             placeholder="confirmaton adresse email">
         </div>
         <div class="form-group row" *ngIf="mode == 1">
@@ -76,28 +68,25 @@
           <input
             class="form-control"
             type="text"
-            name="name"
-            placeholder="mot de passe">
+            formControlName="pwd">
         </div>
         <div class="form-group row" *ngIf="mode == 1">
-          <label class="col-6" >Conformation Mot de passe</label>
+          <label class="col-9" >Conformation Mot de passe</label>
           <input
             class="form-control"
             type="text"
-            name="name"
             placeholder="confirmer votre mot de passe">
         </div>
         <div class="form-group row" *ngIf="mode == 1">
           <label class="col-6">Photo</label>
-          <image-upload class="customClass"
-                        buttonCaption="Selctionner"
-                        dropBoxMessage=""
-                        clearButtonCaption="X"
-          >
-          </image-upload>
+          <input
+            class="form-control"
+            type="text"
+            formControlName="img"
+            placeholder=" URL">
         </div>
         <br>
-             <button class="btn btn-primary" *ngIf="mode == 1" (click)="editer()">Valider</button>
+             <button class="btn btn-primary" *ngIf="mode == 1" >Valider</button>
         <br>
         <br>
       </form>

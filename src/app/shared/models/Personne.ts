@@ -7,10 +7,9 @@ export class Personne {
   public profession: string;
   public ville: string;
   public img: string;
+  public passWord: string;
 
-
-constructor(id , nom, prenom, email, tel, profession, ville, img){
-  this.id =  id;
+constructor( nom: string, prenom: string, email: string, tel: string, profession: string, ville: string, img: string, passWord: string) {
   this.nom = nom;
   this.prenom = prenom;
   this.email = email;
@@ -18,5 +17,6 @@ constructor(id , nom, prenom, email, tel, profession, ville, img){
   this.profession = profession;
   this.ville = ville;
   this.img = img;
+  this.passWord = passWord;
 }
 }

@@ -68,10 +68,10 @@
       <div class="row">
         <div class="col-1"></div>
         <a class="avatar2 col-2">
-          <img src="../../../assets/img/acttivity2.png" class="fa">
+          <img src="../../../assets/img/personel.png" class="fa">
         </a>
         <div class="col-6 ">
-          <span class="label row"> ------------------</span>
+          <span class="label row"> {{org.staffNumber}}</span>
         </div>
       </div>
 
@@ -82,7 +82,7 @@
           <img src="../../../assets/img/candition.svg" class="fa">
         </a>
         <div class="col-6 ">
-          <span class="label row"> {{org.admissionConditions}}  </span>
+          <span class="label row"> {{org.admissionConditions}}. La limite d'age est : {{org.ageLimits}}  </span>
         </div>
       </div>
       <br>
@@ -112,39 +112,15 @@
       </div>
     </div>
 
-    
-
-    <br>
-    <div class="chat">
+    <div *ngFor="let cmt of org.comments">
+      <br>
+      <div class="chat">
         <div class="row">
-          <a href="#">@ Utilisateur User :</a>
+          <a href="#">@ {{cmt.user.nom}} :</a>
         </div>
         <div class="row">
-          <p class="msgTex">Cette crèche est formidable</p>
+          <p class="msgTex">{{cmt.text}}</p>
         </div>
-    </div>
-    <div class="chat">
-      <div class="row">
-        <a href="#">@ Utilisateur User :</a>
-      </div>
-      <div class="row">
-        <p class="msgTex">Cette crèche est formidable</p>
-      </div>
-    </div>
-    <div class="chat">
-      <div class="row">
-        <a href="#">@ Utilisateur User :</a>
-      </div>
-      <div class="row">
-        <p class="msgTex">Cette crèche est formidable</p>
-      </div>
-    </div>
-    <div class="chat">
-      <div class="row">
-        <a href="#">@ Utilisateur User :</a>
-      </div>
-      <div class="row">
-        <p class="msgTex">Cette crèche est formidable</p>
       </div>
     </div>
   </div>

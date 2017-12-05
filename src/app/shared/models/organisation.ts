@@ -19,9 +19,20 @@ export class Organisation {
   public comments: Comment[];
 
 
-  constructor(name: string, adresse: string, img: string, email: string, phone: string, website: string, address: Adresse,
-              description: string, staffNumber: number, openingHours: string, admissionConditions: string,
-              capacity: number, ageLimits: string, comments: Comment[]) {
+  constructor(name: string,
+              adresse: string,
+              img: string,
+              email: string,
+              phone: string,
+              website: string,
+              address: Adresse,
+              description: string,
+              staffNumber: number,
+              openingHours: string,
+              admissionConditions: string,
+              capacity: number,
+              ageLimits: string,
+              comments: Comment[]) {
     this.name = name;
     this.adresse = adresse;
     this.img = img;
