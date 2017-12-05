@@ -1,29 +1,29 @@
 <ul class="list-group">
-  <li class="item-box list-group-item form-group row" *ngFor="let org of Orgs">
+  <li class="item-box list-group-item form-group row" *ngFor="let org of Orgs; let index = index">
     <div class="col-4">
       <img class="avatar" src="{{org.img}}">
     </div>
     <div class="col-8">
       <br><br>
       <div class="row">
-        <div class="col-form-label label">Posté par :
-          <a href=""> {{org.name}} </a></div>
+        <div class="col-form-label label col-2">Nom :</div>
+        <div class="col-form-label label col-8">{{org.name}}</div>
       </div>
-      <br>
       <div class="row">
-        <div class="col-form-label label">Nom :
-          <a> {{org.name}} </a> </div>
+        <div class="col-form-label label col-2">Contacts : </div>
+        <div class="col-form-label label col-10">{{org.phone}}</div>
+        <div class="col-2"></div>
+        <div class="col-form-label label col-9">{{org.email}}</div>
+
       </div>
-      <br>
       <div class="row">
         <div class="col-form-label label">Adresse:
           <a> {{org.adresse}} </a> </div>
       </div>
-      <br>
       <div class="row">
         <div class="col-10"></div>
         <div class="col-2">
-          <a  class="nb-btn-circle" (click)="redirigerDetail()">
+          <a  class="nb-btn-circle" (click)="redirigerDetail(index)">
             <img src="../../../assets/img/5982-200.png" class="fa">
             <p>Comments</p>
             <span class="indicator-dot">6</span>

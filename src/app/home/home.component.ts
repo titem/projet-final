@@ -21,7 +21,7 @@ export class HomeComponent implements OnInit {
     this.router.navigate(['home']);
   }
   allerProfil(): void {
-    this.router.navigate(['profil', 1]);
+    this.router.navigate(['profil', 2]);
   }
   allercreche(): void {
     this.router.navigate(['org']);

@@ -13,6 +13,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatDialog, MatDialogModule} from '@angular/material';
+import { LogService } from './shared/services/log-service/log-service.component';
+import { OrgService } from './shared/services/org-service/org-service.component';
 
 
 const appRoutes: Routes = [
@@ -22,7 +24,7 @@ const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'espaceCreche', component: ContainerComponent , children: [
     { path: 'list', component: ListGarderieComponent },
-    { path: 'detail/:id', component: OrgDetailsComponent }
+    { path: 'detail/:index', component: OrgDetailsComponent }
   ]},
   { path: '',
     redirectTo: '/login',
@@ -41,18 +43,24 @@ const appRoutes: Routes = [
     PersonFormComponent,
     OrgFormComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
   ],
   imports: [
     BrowserAnimationsModule,
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     ImageUploadModule.forRoot(),
     ReactiveFormsModule,
     MatDialogModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    OrgService,
+    LogService
+  ],
+  bootstrap: [
+    AppComponent
+  ]
 })
 export class AppModule { }

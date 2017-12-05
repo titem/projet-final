@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Organisation} from '../../shared/models/organisation';
 import {ActivatedRoute, Router} from '@angular/router';
+import {OrgService} from '../../shared/services/org-service/org-service.component';
 
 @Component({
   selector: 'app-list-garderie',
@@ -10,21 +11,18 @@ import {ActivatedRoute, Router} from '@angular/router';
 export class ListGarderieComponent implements OnInit {
   Orgs: Organisation[];
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute) {
-    this.Orgs = [
-      new Organisation('nom1', 'qdfsejhliuhrg jheloufhourg', '../../assets/img/26e6ef2ef7cdfbcc47fdd880c8b303d2--modern-nursery-decor-modern-nurseries.jpg'),
-      new Organisation('nom2', 'qdfsejhliuhrg jheloufhourg', 'http://www.info-chalon.com/article/media/images/0MARS2016/IMG_7517.jpg'),
-      new Organisation('nom3', 'qdfsejhliuhrg jheloufhourg', '../../assets/img/26e6ef2ef7cdfbcc47fdd880c8b303d2--modern-nursery-decor-modern-nurseries.jpg'),
-      new Organisation('nom4', 'qdfsejhliuhrg jheloufhourg', '../../assets/img/26e6ef2ef7cdfbcc47fdd880c8b303d2--modern-nursery-decor-modern-nurseries.jpg'),
-      new Organisation('nom5', 'qdfsejhliuhrg jheloufhourg', '../../assets/img/26e6ef2ef7cdfbcc47fdd880c8b303d2--modern-nursery-decor-modern-nurseries.jpg'),
-      new Organisation('nom6', 'qdfsejhliuhrg jheloufhourg', '../../assets/img/26e6ef2ef7cdfbcc47fdd880c8b303d2--modern-nursery-decor-modern-nurseries.jpg')];
+  constructor(private router: Router, private activatedRoute: ActivatedRoute, private orgService: OrgService) {
   }
 
   ngOnInit() {
+    this.orgService.getListOrg().subscribe( valeur => {
+       this.Orgs = valeur;
+    });
+
   }
 
-  redirigerDetail(): void {
-    this.router.navigate(['espaceCreche/detail', 5]);
+  redirigerDetail(index: number): void {
+    this.router.navigate(['espaceCreche/detail', index]);
   }
 
 

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
+import {FormControl, FormGroup,  Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -8,15 +9,33 @@ import {ActivatedRoute, Router} from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute) {
+  public formLog: FormGroup;
 
+  constructor(private router: Router, private activatedRoute: ActivatedRoute) {
   }
 
   authentifier(): void {
-    this.router.navigate(['home']);
+    if (this.formLog.valid) {
+      this.router.navigate(['home']);
+    }
   }
 
   ngOnInit() {
+    this.formLog = new FormGroup( {
+      email: new FormControl('', this.emailValidcustom),
+      pwd: new FormControl('', [Validators.required])
+    } );
+  }
+
+  emailValidcustom(formControl: FormControl):  boolean | void {
+    if (formControl.dirty) {
+      return null;
+
+  }
+  }
+
+  creerCompte(): void {
+      this.router.navigate(['profil', 1]);
   }
 
 }

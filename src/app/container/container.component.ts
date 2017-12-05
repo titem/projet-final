@@ -19,7 +19,7 @@ export class ContainerComponent implements OnInit {
     this.router.navigate(['home']);
   }
   allerProfil(): void {
-    this.router.navigate(['profil']);
+    this.router.navigate(['profil', 2]);
   }
   allercreche(): void {
     this.router.navigate(['org']);

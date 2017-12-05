@@ -68,3 +68,6 @@ input {
 .text:hover{
   color: #FF5722!important;
 }
+.msg{
+  width: 300px;
+}

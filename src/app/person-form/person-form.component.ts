@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
+import {Personne} from '../shared/models/Personne';
 
 @Component({
   selector: 'app-person-form',
@@ -9,6 +10,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 export class PersonFormComponent implements OnInit {
 
   public mode: number;
+  public user: Personne;
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute) { }
 
@@ -20,18 +22,16 @@ export class PersonFormComponent implements OnInit {
     this.router.navigate(['home']);
   }
   allerProfil(): void {
-    this.router.navigate(['profil']);
+    this.router.navigate(['profil', 2]);
   }
-
-  editer(): void {
-    this.mode = 1;
-  }
-
-  creer(): void {
-    this.router.navigate(['home']);
-  }
-
   allercreche(): void {
     this.router.navigate(['org']);
   }
+
+
+  editer(): void {
+    this.router.navigate(['home']);
+  }
+
+
 }
