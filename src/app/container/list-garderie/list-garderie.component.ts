@@ -15,7 +15,7 @@ export class ListGarderieComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.orgService.getListOrg().subscribe( valeur => {
+    this.orgService.getListOrg().subscribe( (valeur) => {
        this.Orgs = valeur;
     });
 

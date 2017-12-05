@@ -2,13 +2,13 @@ import {Comment} from './Comment';
 import {Adresse} from './Adresse';
 
 export class Organisation {
-  public name: string;
-  public adresse: string;
-  public img: string;
   public id: string;
+  public name: string;
+  public img: string;
   public email: string;
   public phone: string;
   public website: string;
+  public adresse: string;
   public address: Adresse;
   public description: string;
   public staffNumber: number;
