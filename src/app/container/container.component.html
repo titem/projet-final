@@ -1,7 +1,17 @@
-<div class="list-background">
+<div class="list-background" id="style-1">
+  <div id="nav">
+    <div id="nav-wrapper">
+      <br>
+      <ul>
+        <li> <a (click)="allerHome()">iCrèche</a></li>
+        <li> <a (click)="allerProfil()">Mon profil</a></li>
+        <li> <a (click)="allercreche()">Poster</a></li>
+      </ul>
+    </div>
+  </div>
   <br>
- <div class="row">
-   <app-org-details></app-org-details>
+ <div class="row" >
+   <router-outlet></router-outlet>
  </div>
  <div class="row">
  </div>

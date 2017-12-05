@@ -1,0 +1,120 @@
+.form-box {
+  margin-top:30px;
+  margin-left:30%;
+  width: 500px;
+  height: 500px;
+  background: rgba(0,0,0,0.5);
+  box-shadow: -1px 4px 26px 2px rgba(0,0,0,0.75 );
+  max-height:500px;
+  overflow-x: hidden;
+}
+.form-group {
+  margin-left: 30px;
+  margin-top: 30px !important;
+  margin-right: 30px;
+}
+label{
+  color: #dddddd;
+}
+.form-box::-webkit-scrollbar-track
+{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 50px;
+  background-color: transparent;
+}
+
+.form-box::-webkit-scrollbar
+{
+  width: 12px;
+  background-color: transparent;
+}
+
+.form-box::-webkit-scrollbar-thumb
+{
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+  background-color: rgba(12,0,0,0.5);
+}
+button {
+  margin-left: 60%;
+}
+.customClass {
+  background-color: #bdc3c7;
+  border-radius: 5px;
+  margin:5px;
+  width: 500px;
+}
+
+.label2 {
+  color: #F9DF05 ;;
+  font-family: "Noto Sans CJK SC Bold";
+  font-size: 24px;
+  margin-left: 120px;
+}
+
+
+
+.list-background {
+  font-family: Arial, sans-serif;
+  background-image: url("../../assets/img/garde-enfants.jpg");
+  height: 678px;
+  max-height: 678px;
+  overflow-x: hidden;
+
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#nav {
+  width: 100%;
+  height: 60px;
+  background: rgba(0,0,0,0.8);
+  box-shadow: -1px 4px 26px 2px rgba(0,0,0,0.75 );
+  max-height:500px;
+}
+#nav-wrapper {
+  margin-left: auto;
+  margin-right: auto;
+}
+#nav-wrapper ul li{
+  list-style: none;
+  display: inline;
+  font-weight: bold;
+  padding-left: 98px;
+}
+#nav-wrapper a {
+  color: #00897B;
+  margin-top: 10px;
+}
+#nav-wrapper a:hover{
+  color: orange;
+}
+
+#style-1::-webkit-scrollbar-track
+{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 50px;
+  background-color: transparent;
+}
+
+#style-1::-webkit-scrollbar
+{
+  width: 12px;
+  background-color: transparent;
+}
+
+#style-1::-webkit-scrollbar-thumb
+{
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+  background-color: rgba(12,0,0,0.5);
+}
+.avatar {
+  width: 300px;
+  height: 200px;
+  margin-left: 60px;
+  border-radius: 50%;
+  top: -50%;
+  left: calc(50% - 50px);
+}

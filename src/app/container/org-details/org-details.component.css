@@ -99,17 +99,19 @@
   border-radius: 50px 20px;
 }
 
-.nb-btn-cloud:hover{
+.nb-btn-cloud:hover {
   background: #FF8A65;
   border-color: #E91E63;
   color: #fff;
 }
-.nb-btn-cloud:focus{
+.nb-btn-cloud:focus {
   color:  #fff;
   background: #FF8A65;
   border-color: #546E7A;
   opacity: 0.9;
   box-shadow: -1px 4px 26px 2px rgba(0,0,0,0.75 );
+  -webkit-animation-delay: -2s; /* Chrome, Safari, Opera */
+  animation-delay: -2s;
 }
 .nb-btn-cloud .fa {
   margin-left: 10px;
@@ -194,9 +196,6 @@
   font-family: "Noto Sans Mono CJK KR Bold";
   color: #3a3a3a;
 }
-.row a:hover {
-  color: #2980b9;
-}
 .msgTex {
   margin-left: 40px;
   font-family: "Bitstream Charter";
@@ -254,6 +253,35 @@
   font-weight: bold;
   text-align: center;
   line-height: 14px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -khtml-border-radius: 50%;
+  -moz-border-radius: 50%;
+  color: #fff;
+  background-color: #D9534F;
+  background-image: none;
+}
+.msgTexWrit{
+  margin-left: 40px;
+
+  font-family: "Bitstream Charter";
+  color: #3a3a3a;
+  background: rgba(0,0,0,0.1);
+  border-radius: 5%;
+  width: 750px;
+  height: 30px;
+}
+
+.indicator-dot2 {
+  position: absolute;
+  margin-top: 10px;
+  right: 150px;
+  height: 20px;
+  width: 20px;
+  font-size: 15px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 18px;
   border-radius: 50%;
   -webkit-border-radius: 50%;
   -khtml-border-radius: 50%;

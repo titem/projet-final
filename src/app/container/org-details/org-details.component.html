@@ -2,12 +2,12 @@
   <div class="row prsentation">
     <div class="col-12 form-group">
             <img class="avatar" src="http://creches-calinsdoudou.com/wp-content/uploads/2017/02/Creche-St-Germain-20.jpg">
-            <a href="#" class="nb-btn-cloud info-mar" (click)="infoSection=true;">
-              <img src="../../assets/img/info.png" class="fa">
+            <a class="nb-btn-cloud info-mar" (click)="infoSection=true;">
+              <img src="../../../assets/img/info.png" class="fa">
               <p>Informations</p>
             </a>
-            <a href="#" class="nb-btn-cloud discuss-marg" (click)="infoSection=false;">
-              <img src="../../assets/img/5982-200.png" class="fa cms">
+            <a class="nb-btn-cloud discuss-marg" (click)="infoSection=false;">
+              <img src="../../../assets/img/5982-200.png" class="fa cms">
               <p>Commentaires</p>
             </a>
     </div>
@@ -23,7 +23,7 @@
       <div class="row">
         <div class="col-1"></div>
         <a class="avatar2 col-2">
-          <img src="../../assets/img/home.png" class="fa">
+          <img src="../../../assets/img/home.png" class="fa">
         </a>
         <div class="col-6 ">
           <span class="label row">25, Rue la liberté  </span>
@@ -34,7 +34,7 @@
       <div class="row">
         <div class="col-1"></div>
         <a class="avatar2 col-2">
-          <img src="../../assets/img/contact.png" class="fa">
+          <img src="../../../assets/img/contact.png" class="fa">
         </a>
         <div class="col-7">
           <span class="label row">Tel   : +33 -- -- -- -- -- </span>
@@ -46,7 +46,7 @@
       <div class="row">
         <div class="col-1"></div>
         <a class="avatar2 col-2">
-          <img src="../../assets/img/Calendar-Time.png" class="fa">
+          <img src="../../../assets/img/Calendar-Time.png" class="fa">
         </a>
         <div class="col-7">
           <span class="label row">Ouvert ------------------- </span>
@@ -56,7 +56,7 @@
       <div class="row">
         <div class="col-1"></div>
         <a class="avatar2 col-2">
-          <img src="../../assets/img/description.png" class="fa">
+          <img src="../../../assets/img/description.png" class="fa">
         </a>
         <div class="col-7">
           <span class="label row"> --------------------------------------------------------
@@ -71,7 +71,7 @@
       <div class="row">
         <div class="col-1"></div>
         <a class="avatar2 col-2">
-          <img src="../../assets/img/acttivity2.png" class="fa">
+          <img src="../../../assets/img/acttivity2.png" class="fa">
         </a>
         <div class="col-6 ">
           <span class="label row"> ------------------</span>
@@ -81,7 +81,7 @@
       <div class="row">
         <div class="col-1"></div>
         <a class="avatar2 col-2">
-          <img src="../../assets/img/personel.png" class="fa">
+          <img src="../../../assets/img/personel.png" class="fa">
         </a>
         <div class="col-6 ">
           <span class="label row">6 personnes hautement qualifiées  </span>
@@ -91,7 +91,7 @@
       <div class="row">
         <div class="col-1"></div>
         <a class="avatar2 col-2">
-          <img src="../../assets/img/candition.svg" class="fa">
+          <img src="../../../assets/img/candition.svg" class="fa">
         </a>
         <div class="col-6 ">
           <span class="label row">6 personnes hautement qualifiées  </span>
@@ -105,11 +105,26 @@
   <div class="row discuss tab-container" id="style-2" *ngIf="!infoSection">
 
     <br>
-    <a href="#" class="nb-btn-circle">
-      <img src="../../assets/img/commenter.png" class="fa">
-
+    <a class="nb-btn-circle" (click)="ajouterCommentaire()">
+      <img src="../../../assets/img/commenter.png" class="fa">
       <span class="indicator-dot">+</span>
     </a>
+
+    <br *ngIf="commenter">
+    <div class="chat" *ngIf="commenter">
+      <div class="row">
+        <a href="#">@ Utilisateur Courant :</a>
+      </div>
+      <div class="row">
+        <input type="text" class="msgTexWrit">
+      </div>
+      <div class="row">
+        <a (click)="saveComment()"  class="indicator-dot2">
+          <p>+</p></a>
+      </div>
+    </div>
+
+
     <br>
     <div class="chat">
         <div class="row">

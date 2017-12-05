@@ -1,0 +1,107 @@
+
+<div class="list-background" id="style-1">
+  <div id="nav">
+    <div id="nav-wrapper">
+      <br>
+      <ul>
+        <li> <a (click)="allerHome()">iCrèche</a></li>
+        <li> <a (click)="allerProfil()">Mon profil</a></li>
+        <li> <a (click)="allercreche()">Poster</a></li>
+      </ul>
+    </div>
+  </div>
+  <br>
+  <div class="row" >
+    <div class="form-box">
+      <form>
+        <div class="form-group row">
+          <label class="label2" *ngIf="mode == 1">Nouveau Profil</label>
+          <img class="avatar" *ngIf="mode == 2" src="../../assets/img/font3.jpg">
+        </div>
+        <div class="form-group row">
+          <label class="col-6">Nom complet *</label>
+          <label class="col-6" *ngIf="mode == 2" class="labelInfo">HELLO THERE</label>
+          <input
+            *ngIf="mode == 1"
+            class="form-control"
+            type="text"
+            name="name"
+            placeholder="prénom nom">
+        </div>
+        <div class="form-group row">
+          <label class="col-6">Ville</label>
+          <label class="col-6" *ngIf="mode == 2" class="labelInfo">HELLO THERE</label>
+          <input
+            *ngIf="mode == 1"
+            class="form-control"
+            type="text"
+            name="name"
+            placeholder="prénom nom">
+        </div>
+        <div class="form-group row">
+          <label class="col-6">Téléphone</label>
+          <label class="col-6" *ngIf="mode == 2" class="labelInfo">HELLO THERE</label>
+          <input
+            *ngIf="mode == 1"
+            class="form-control"
+            type="text"
+            name="name"
+            placeholder="prénom nom">
+        </div>
+        <div class="form-group row">
+          <label class="col-6">Email *</label>
+          <label class="col-6" *ngIf="mode == 2" class="labelInfo">HELLO THERE</label>
+          <input
+            *ngIf="mode == 1"
+            class="form-control"
+            type="email"
+            name="email"
+            placeholder="adresse email">
+        </div>
+        <div class="form-group row" *ngIf="mode == 1">
+          <label class="col-6">Confirmation email</label>
+          <input
+            class="form-control"
+            type="email"
+            name="confirm"
+            placeholder="confirmaton adresse email">
+        </div>
+        <div class="form-group row" *ngIf="mode == 1">
+          <label class="col-6">Mot de passe *</label>
+          <input
+            class="form-control"
+            type="text"
+            name="name"
+            placeholder="prénom nom">
+        </div>
+        <div class="form-group row" *ngIf="mode == 1">
+          <label class="col-6" >Conformation Mot de passe</label>
+          <input
+            class="form-control"
+            type="text"
+            name="name"
+            placeholder="prénom nom">
+        </div>
+        <div class="form-group row" *ngIf="mode == 1">
+          <label class="col-6">Photo</label>
+          <image-upload class="customClass"
+                        buttonCaption="Selctionner"
+                        dropBoxMessage=""
+                        clearButtonCaption="X"
+          >
+          </image-upload>
+        </div>
+        <br>
+             <button class="btn btn-primary" *ngIf="mode == 2" (click)="editer()">Modiifer</button>
+             <button class="btn btn-primary" *ngIf="mode == 1" (click)="creer()">Valider</button>
+        <br>
+        <br>
+      </form>
+    </div>
+
+  </div>
+  <div class="row">
+  </div>
+
+</div>
+

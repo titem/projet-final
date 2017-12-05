@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Organisation} from '../shared/models/organisation';
+import {Organisation} from '../../shared/models/organisation';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-list-garderie',
@@ -9,7 +10,7 @@ import {Organisation} from '../shared/models/organisation';
 export class ListGarderieComponent implements OnInit {
   Orgs: Organisation[];
 
-  constructor() {
+  constructor(private router: Router, private activatedRoute: ActivatedRoute) {
     this.Orgs = [
       new Organisation('nom1', 'qdfsejhliuhrg jheloufhourg', '../../assets/img/26e6ef2ef7cdfbcc47fdd880c8b303d2--modern-nursery-decor-modern-nurseries.jpg'),
       new Organisation('nom2', 'qdfsejhliuhrg jheloufhourg', 'http://www.info-chalon.com/article/media/images/0MARS2016/IMG_7517.jpg'),
@@ -21,5 +22,10 @@ export class ListGarderieComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  redirigerDetail(): void {
+    this.router.navigate(['espaceCreche/detail', 5]);
+  }
+
 
 }

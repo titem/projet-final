@@ -1,3 +1,61 @@
+.form-box {
+  margin-top:30px;
+  margin-left:30%;
+  width: 500px;
+  height: 500px;
+  background: rgba(0,0,0,0.5);
+  box-shadow: -1px 4px 26px 2px rgba(0,0,0,0.75 );
+  max-height:500px;
+  overflow-x: hidden;
+}
+.form-group {
+  margin-left: 30px;
+  margin-top: 30px !important;
+  margin-right: 30px;
+}
+label{
+  color: #dddddd;
+}
+.form-box::-webkit-scrollbar-track
+{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 50px;
+  background-color: transparent;
+}
+
+.form-box::-webkit-scrollbar
+{
+  width: 12px;
+  background-color: transparent;
+}
+
+.form-box::-webkit-scrollbar-thumb
+{
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+  background-color: rgba(12,0,0,0.5);
+}
+button {
+  margin-left: 60%;
+}
+.customClass {
+  background-color: #bdc3c7;
+  border-radius: 5px;
+  margin:5px;
+  width: 500px;
+}
+
+.label2 {
+  color: #F9DF05 ;;
+  font-family: "Noto Sans CJK SC Bold";
+  font-size: 24px;
+  margin-left: 100px;
+}
+.sous-lab{
+  font-size: 14px !important;
+}
+
 .list-background {
   font-family: Arial, sans-serif;
   background-image: url("../../assets/img/garde-enfants.jpg");

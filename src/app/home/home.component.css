@@ -1,0 +1,94 @@
+.global-container{
+  font-family: Arial, sans-serif;
+  background-image: url("../../assets/img/font4.jpg");
+  height: 668px;
+  max-height: 668px;
+  overflow-x: hidden;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.panel{
+  border: 0px solid #fff;
+  -webkit-box-shadow: -1px 4px 26px 11px rgba(0,0,0,0.75);
+  -moz-box-shadow: -1px 4px 26px 11px rgba(0,0,0,0.75);
+  box-shadow: -1px 4px 26px 11px rgba(0,0,0,0.75);
+  background-color: rgba(0,0,0,0.5);
+  color: #ffffff;
+  padding-top: 70px;
+  border-radius: 10%;
+  position: relative;
+  transition: 1s;
+}
+h5{
+  text-align: center;
+  color: #F9DF05 ;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.panel:hover{
+  background: rgba(0,0,0,0.7);
+}
+.lock{
+  position: absolute;
+  top: -50px;
+  width: 100px;
+  height: 100px;
+  line-height: 112px;
+  text-align: center;
+  left: 37%;
+  background: rgba(0,0,0,0.1) !important;
+  border: 3px outset #F9DF05;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -ms-border-radius: 100%;
+  -o-border-radius: 100%;
+  border-radius: 100%;
+  -webkit-box-shadow: -1px 4px 26px 11px  rgba(255,255,255,0.5);
+  -moz-box-shadow: -1px 4px 26px 11px  rgba(255,255,255,0.5);
+  box-shadow: -1px 4px 26px 11px  rgba(255,255,255,0.5);
+}
+.lock:hover{
+  border: 3px outset #E91E63;
+  background: rgba(0,0,0,0.7);
+}
+.fa {
+  float: left;
+  height: 60px;
+  width: 90%;
+  margin-top: 20px;
+  margin-left: 2px;
+  font-size: 24px;
+}
+.fa3{
+  float: left;
+  height: 40px;
+  width: 80%;
+  margin-top: 30px;
+  margin-left: 11px;
+  font-size: 24px;
+}
+
+#nav {
+  width: 100%;
+  height: 60px;
+  background: rgba(0,0,0,0.8);
+  box-shadow: -1px 4px 26px 2px rgba(0,0,0,0.75 );
+  max-height:500px;
+}
+#nav-wrapper {
+  margin-left: auto;
+  margin-right: auto;
+}
+#nav-wrapper ul li{
+  list-style: none;
+  display: inline;
+  font-weight: bold;
+  padding-left: 98px;
+}
+#nav-wrapper a {
+  color: #00897B;
+  margin-top: 10px;
+}
+#nav-wrapper a:hover{
+  color: orange;
+}
