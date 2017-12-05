@@ -2,11 +2,11 @@
   <div class="row prsentation">
     <div class="col-12 form-group">
             <img class="avatar" src="http://creches-calinsdoudou.com/wp-content/uploads/2017/02/Creche-St-Germain-20.jpg">
-            <a href="#" class="nb-btn-circle info-mar" (click)="infoSection=true;">
+            <a href="#" class="nb-btn-cloud info-mar" (click)="infoSection=true;">
               <img src="../../assets/img/info.png" class="fa">
               <p>Informations</p>
             </a>
-            <a href="#" class="nb-btn-circle discuss-marg" (click)="infoSection=false;">
+            <a href="#" class="nb-btn-cloud discuss-marg" (click)="infoSection=false;">
               <img src="../../assets/img/5982-200.png" class="fa cms">
               <p>Commentaires</p>
             </a>
@@ -103,6 +103,14 @@
   </div>
 
   <div class="row discuss tab-container" id="style-2" *ngIf="!infoSection">
+
+    <br>
+    <a href="#" class="nb-btn-circle">
+      <img src="../../assets/img/commenter.png" class="fa">
+
+      <span class="indicator-dot">+</span>
+    </a>
+    <br>
     <div class="chat">
         <div class="row">
           <a href="#">@ Utilisateur User :</a>
