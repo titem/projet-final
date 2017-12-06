@@ -1,10 +1,16 @@
-# New Web's Technologies course with Hapiness
+# iCrèche application's backend
 
 This project is to learn new `Node.js` framework calls [Hapiness](https://github.com/hapinessjs/hapiness)
 
+## Database
+
+You can populate a MongoDB database with some nursery informations with the following command:  
+`mongo mongo-script.js`
+
+
 ## Development server
 
-Run `yarn | npm run dev:watch` for a dev server. API will be on `http://localhost:4443/`. The API will automatically reload if you change any of the source files.
+Run `yarn | npm run dev:watch` for a dev server. API will be on `http://0.0.0.0:4443/`. The API will automatically reload if you change any of the source files.
 
 ## Build
 
