@@ -56,7 +56,6 @@ export class OrgFormComponent implements OnInit {
   }
 
   creerCreche(): void {
-    console.log(this.formOrg.get('email').hasError('email'));
     this.submited = true;
     if (this.formOrg.get('name').valid &&
       this.formOrg.get('ville').valid &&

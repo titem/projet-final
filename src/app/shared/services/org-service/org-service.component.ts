@@ -16,10 +16,26 @@ export class OrgService implements OnInit {
 
     this.Orgs.next(
       [
-        new Organisation('Cerèche les petits malins', '23, site province, Laxou, 54520', 'http://www.rue89strasbourg.com/wp-content/uploads/2012/04/creche_parentale-UNE-464x309.jpg', 'petitsmalins@gmail.com', '06 05 89 32 36', 'http://www.rue89strasbourg.com', adr,
-          'établissement accueille des enfants de 10 semaine(s) à 4 an(s)', 0, 'Tous les jours de 8h à 18h. Exeption samedi et dimanche', 'Enfant pas atteind par une maladie contagieuse', 20, '6', null),
-        new Organisation('Cerèche les petits malins', '23, site province, Laxou, 54520', 'http://www.rue89strasbourg.com/wp-content/uploads/2012/04/creche_parentale-UNE-464x309.jpg', 'petitsmalins@gmail.com', '06 05 89 32 36', 'http://www.rue89strasbourg.com', adr,
-        'établissement accueille des enfants de 10 semaine(s) à 4 an(s)', 0, 'Tous les jours de 8h à 18h. Exeption samedi et dimanche', 'Enfant pas atteind par une maladie contagieuse', 20, '6', null),
+        new Organisation('Cerèche les petits malins',
+                         '23, site province, Laxou, 54520',
+                         'http://www.rue89strasbourg.com/wp-content/uploads/2012/04/creche_parentale-UNE-464x309.jpg',
+                         'petitsmalins@gmail.com', '06 05 89 32 36', 'http://www.rue89strasbourg.com',
+                          new Adresse ('Laxoviennes', 54520, 'vendoeuvres'),
+                          'établissement accueille des enfants de 10 semaine(s) à 4 an(s)',
+                            0,
+                          'Tous les jours de 8h à 18h. Exeption samedi et dimanche',
+                          'Enfant pas atteind par une maladie contagieuse',
+                           20,
+                           '6', null),
+                          new Organisation('Cerèche hello kids',
+                            '80, Malzéville, Nancy, 54540',
+                            'http://www.franchise-enfants.fr/images/zoom/ouvrir-une-micro-creche.jpg',
+                            'hello.kids@gmail.com', '06 05 00 32 16',
+                            'http://www.rue89strasbourg.com',
+                            new Adresse ('80, Malzéville', 54540, 'vendoeuvres'),
+                            'établissement accueille des enfants de 10 semaine(s) à 4 an(s)',
+                              0, 'Tous les jours de 8h à 18h. Exeption dimanche',
+                              'Sans conditions particulières', 20, '6', null),
 
   ]
   );

@@ -101,7 +101,7 @@
     <br *ngIf="commenter">
     <div class="chat" *ngIf="commenter">
       <div class="row">
-        <a href="#">@ Utilisateur Courant :</a>
+        <a href="#">@ {{user.nom}} :</a>
       </div>
       <div class="row">
         <input type="text" class="msgTexWrit" #comment>
