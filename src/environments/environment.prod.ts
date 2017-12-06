@@ -7,8 +7,8 @@ export const environment = {
     endpoints: {
       allUsers: '/api/users',
       oneUser: '/api/users/:id',
-      allOrgs: '/api/nurseries',
-      oneOrg: '/api/nurseries/:id',
+      allNurseries: '/api/nurseries',
+      oneNursery: '/api/nurseries/:id',
       allComments: '/api/nurseries/:id/comments',
       oneComment: '/api/nurseries/:id/comments/:commentId'
     }

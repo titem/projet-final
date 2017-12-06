@@ -22,7 +22,7 @@ export class ContainerComponent implements OnInit {
     this.router.navigate(['profil', 2]);
   }
   allercreche(): void {
-    this.router.navigate(['org']);
+    this.router.navigate(['nursery']);
   }
 
 }

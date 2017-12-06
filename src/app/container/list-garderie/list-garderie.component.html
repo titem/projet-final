@@ -1,29 +1,30 @@
 <ul class="list-group">
-  <li class="item-box list-group-item form-group row" *ngFor="let org of Orgs; let index = index">
+  <li class="item-box list-group-item form-group row" *ngFor="let nursery of nurseries">
     <div class="col-4">
-      <img class="avatar" src="{{org.img}}">
+      <img class="avatar" src="{{ nursery.img }}">
     </div>
     <div class="col-8">
       <br><br>
       <div class="row">
         <div class="col-form-label label col-2">Nom :</div>
-        <div class="col-form-label label col-8">{{org.name}}</div>
+        <div class="col-form-label label col-8">{{ nursery.name }}</div>
       </div>
       <div class="row">
         <div class="col-form-label label col-2">Contacts : </div>
-        <div class="col-form-label label col-10">{{org.phone}}</div>
+        <div class="col-form-label label col-10">{{ nursery.phone }}</div>
         <div class="col-2"></div>
-        <div class="col-form-label label col-9">{{org.email}}</div>
+        <div class="col-form-label label col-9">{{ nursery.email }}</div>
 
       </div>
       <div class="row">
         <div class="col-form-label label">Adresse:
-          <a> {{org.address.street}} </a> </div>
+           {{ nursery.address.street }}
+        </div>
       </div>
       <div class="row">
         <div class="col-10"></div>
         <div class="col-2">
-          <a  class="nb-btn-circle" (click)="redirigerDetail(index)">
+          <a class="nb-btn-circle" [routerLink]="['/espaceCreche/detail', nursery.id]">
             <img src="../../../assets/img/5982-200.png" class="fa">
             <p>Comments</p>
             <span class="indicator-dot">6</span>

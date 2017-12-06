@@ -1,8 +1,7 @@
 .global-container{
   font-family: Arial, sans-serif;
   background-image: url("../../assets/img/font4.jpg");
-  height: 700px;
-  max-height: 700px;
+  min-height: 100vh;
   overflow-x: hidden;
   background-size: cover;
   background-repeat: no-repeat;

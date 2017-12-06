@@ -91,6 +91,10 @@ button {
   color: orange;
 }
 
+#style-1 {
+  min-height: 100vh;
+}
+
 #style-1::-webkit-scrollbar-track
 {
   margin-top: 10px;

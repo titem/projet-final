@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row prsentation">
     <div class="col-12 form-group">
-            <img class="avatar" src="{{ org.img }}">
+            <img class="avatar" src="{{ nursery.img }}">
             <a class="nb-btn-cloud info-mar" (click)="infoSection=true;">
               <img src="../../../assets/img/info.png" class="fa">
               <p>Informations</p>
@@ -17,7 +17,7 @@
       <div class=" row control-container">
         <div class="col-1"></div>
         <label class=" col-2 label-title">Nom</label>
-        <label class=" col-9 label-contentent"> {{ org.name }}</label>
+        <label class=" col-9 label-contentent"> {{ nursery.name }}</label>
       </div>
       <br>
       <div class="row">
@@ -26,8 +26,8 @@
           <img src="../../../assets/img/home.png" class="fa">
         </a>
         <div class="col-6 ">
-          <span class="label row">{{org.address.street}}  </span>
-          <span class="label row">{{org.address.postalCode}}, {{org.address.city}}  </span>
+          <span class="label row">{{ nursery.address.street }}  </span>
+          <span class="label row">{{ nursery.address.postalCode }}, {{ nursery.address.city }}  </span>
         </div>
       </div>
       <br>
@@ -37,9 +37,9 @@
           <img src="../../../assets/img/contact.png" class="fa">
         </a>
         <div class="col-7">
-          <span class="label row">Tel   : {{org.phone}}</span>
-          <span class="label row">Email : {{org.email}} </span>
-          <span class="label row">site  : {{org.website}} </span>
+          <span class="label row">Tel   : {{ nursery.phone }}</span>
+          <span class="label row">Email : {{ nursery.email }} </span>
+          <span class="label row">site  : {{ nursery.website }} </span>
         </div>
       </div>
       <br>
@@ -49,7 +49,7 @@
           <img src="../../../assets/img/Calendar-Time.png" class="fa">
         </a>
         <div class="col-7">
-          <span class="label row">{{org.openingHours}} </span>
+          <span class="label row">{{ nursery.openingHours }} </span>
         </div>
       </div>
     </div>
@@ -61,7 +61,7 @@
           <img src="../../../assets/img/description.png" class="fa">
         </a>
         <div class="col-7">
-          <span class="label row"> {{org.description}}</span>
+          <span class="label row"> {{ nursery.description }}</span>
         </div>
       </div>
       <br>
@@ -71,7 +71,7 @@
           <img src="../../../assets/img/personel.png" class="fa">
         </a>
         <div class="col-6 ">
-          <span class="label row"> {{org.staffNumber}}</span>
+          <span class="label row"> {{ nursery.staffNumber }}</span>
         </div>
       </div>
 
@@ -82,7 +82,7 @@
           <img src="../../../assets/img/candition.svg" class="fa">
         </a>
         <div class="col-6 ">
-          <span class="label row"> {{org.admissionConditions}}. La limite d'age est : {{org.ageLimits}}  </span>
+          <span class="label row"> {{ nursery.admissionConditions }} Accueil d'enfants : {{ nursery.ageLimits }}  </span>
         </div>
       </div>
       <br>
@@ -112,14 +112,14 @@
       </div>
     </div>
 
-    <div *ngFor="let cmt of org.comments">
+    <div *ngFor="let comment of nursery.comments">
       <br>
       <div class="chat">
         <div class="row">
-          <a href="#">@ {{cmt.user.nom}} :</a>
+          <a href="#">{{ comment.user.fullname }} :</a>
         </div>
         <div class="row">
-          <p class="msgTex">{{cmt.text}}</p>
+          <p class="msgTex">{{ comment.text }}</p>
         </div>
       </div>
     </div>
