@@ -14,7 +14,7 @@ export class OrgFormComponent implements OnInit {
   public formOrg: FormGroup;
   public org: Organisation;
   public adr: Adresse;
-  public submited : boolean;
+  public submited: boolean;
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute, private orgService: OrgService) {
   }
@@ -56,19 +56,18 @@ export class OrgFormComponent implements OnInit {
   }
 
   creerCreche(): void {
+    console.log(this.formOrg.get('email').hasError('email'));
     this.submited = true;
     if (this.formOrg.get('name').valid &&
       this.formOrg.get('ville').valid &&
       this.formOrg.get('rue').valid &&
       this.formOrg.get('code').valid &&
-      (this.formOrg.get('email').hasError('email') && this.formOrg.get('email').value.length === 0) &&
+      (!this.formOrg.get('email').hasError('email') && this.formOrg.get('email').value.length !== 0) &&
       !this.formOrg.get('tel').hasError('isValid') &&
       this.formOrg.get('age').valid &&
       this.formOrg.get('capacity').valid &&
       this.formOrg.get('effect').valid &&
-      this.formOrg.get('photo').valid )
-    {
-      console.log(this.formOrg.valid);
+      this.formOrg.get('photo').valid ) {
       this.adr = new Adresse(this.formOrg.get('rue').value, this.formOrg.get('code').value, this.formOrg.get('ville').value);
       this.org = new Organisation(this.formOrg.get('name').value,
         '',

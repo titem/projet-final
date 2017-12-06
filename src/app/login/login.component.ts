@@ -10,28 +10,34 @@ import {FormControl, FormGroup,  Validators} from '@angular/forms';
 export class LoginComponent implements OnInit {
 
   public formLog: FormGroup;
+  public submited: boolean;
+  public auth: boolean;
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute) {
   }
 
   authentifier(): void {
+
+    this.submited = true;
     if (this.formLog.valid) {
-      this.router.navigate(['home']);
+
+      if ( (this.formLog.get('email').value === 'person@gmail.com')
+           && (this.formLog.get('pwd').value === 'pwd') ) {
+        this.auth = false;
+        this.router.navigate(['home']);
+      }else {
+        this.auth = false;
+      }
     }
   }
 
   ngOnInit() {
+    this.auth = true;
+    this.submited = false;
     this.formLog = new FormGroup( {
-      email: new FormControl('', this.emailValidcustom),
-      pwd: new FormControl('', [Validators.required])
+      email: new FormControl('', Validators.required),
+      pwd: new FormControl('', Validators.required)
     } );
-  }
-
-  emailValidcustom(formControl: FormControl):  boolean | void {
-    if (formControl.dirty) {
-      return null;
-
-  }
   }
 
   creerCompte(): void {
