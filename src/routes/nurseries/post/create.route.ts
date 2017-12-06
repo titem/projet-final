@@ -12,21 +12,21 @@ import * as Joi from 'joi';
         validate: {
             payload: Joi.object().keys({
                 name: Joi.string().required(),
-                img: Joi.string(),
-                email: Joi.string().email(),
-                phone: Joi.string(),
-                website: Joi.string().uri(),
+                img: Joi.string().allow(''),
+                email: Joi.string().email().allow(''),
+                phone: Joi.string().allow(''),
+                website: Joi.string().uri().allow(''),
                 address: Joi.object().keys({
                     street: Joi.string().required(),
                     postalCode: Joi.number().required(),
                     city: Joi.string().required()
                 }).required(),
-                description: Joi.string(),
-                staffNumber: Joi.number(),
-                openingHours: Joi.string(),
-                admissionConditions: Joi.string(),
-                capacity: Joi.number(),
-                ageLimits: Joi.string()
+                description: Joi.string().allow(''),
+                staffNumber: Joi.number().allow(''),
+                openingHours: Joi.string().allow(''),
+                admissionConditions: Joi.string().allow(''),
+                capacity: Joi.number().allow(''),
+                ageLimits: Joi.string().allow('')
             })
         },
         payload: {
@@ -39,22 +39,22 @@ import * as Joi from 'joi';
                 201: Joi.object().keys({
                     id: Joi.string().required(),
                     name: Joi.string().required(),
-                    img: Joi.string(),
-                    email: Joi.string().email(),
-                    phone: Joi.string(),
-                    website: Joi.string().uri(),
+                    img: Joi.string().allow(''),
+                    email: Joi.string().email().allow(''),
+                    phone: Joi.string().allow(''),
+                    website: Joi.string().uri().allow(''),
                     address: Joi.object().keys({
                         street: Joi.string().required(),
                         postalCode: Joi.number().required(),
                         city: Joi.string().required()
                     }).required(),
-                    description: Joi.string(),
-                    staffNumber: Joi.number(),
-                    openingHours: Joi.string(),
-                    admissionConditions: Joi.string(),
-                    capacity: Joi.number(),
-                    ageLimits: Joi.string(),
-                    comments: Joi.array()
+                    description: Joi.string().allow(''),
+                    staffNumber: Joi.number().allow(''),
+                    openingHours: Joi.string().allow(''),
+                    admissionConditions: Joi.string().allow(''),
+                    capacity: Joi.number().allow(''),
+                    ageLimits: Joi.string().allow(''),
+                    comments: Joi.array().allow('')
                 })
             }
         },

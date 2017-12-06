@@ -20,7 +20,7 @@ import { NurseryService } from '../../../services/nursery';
                     name: Joi.string().required(),
                     img: Joi.string().allow(''),
                     email: Joi.string().email().allow(''),
-                    phone: Joi.string().allow(),
+                    phone: Joi.string().allow(''),
                     website: Joi.string().uri().allow(''),
                     address: Joi.object().keys({
                         street: Joi.string().required(),

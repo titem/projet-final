@@ -5,11 +5,6 @@ import { Config } from '@hapiness/config';
 import { MongoClientService, MongoModule } from '@hapiness/mongo';
 import { Observable } from 'rxjs/Observable';
 import {
-    DeleteOnePeopleRoute,
-    GetAllPeopleRoute,
-    GetOnePeopleRoute,
-    PostCreatePeopleRoute,
-    PutUpdatePeopleRoute,
     GetOneUserRoute,
     PostCreateUserRoute,
     GetAllNurseryRoute,
@@ -28,7 +23,7 @@ import {
     NurseryDocumentService,
     NurseryService
 } from './services';
-import { PeopleModel, UserModel, NurseryModel } from './models';
+import { UserModel, NurseryModel } from './models';
 
 
 
@@ -46,8 +41,6 @@ const nurseryDocumentFactory = (mongoClientService: MongoClientService) => new N
         MongoModule
     ],
     declarations: [
-        GetAllPeopleRoute, GetOnePeopleRoute, PostCreatePeopleRoute, PutUpdatePeopleRoute, DeleteOnePeopleRoute,
-        PeopleModel,
         GetOneUserRoute, PostCreateUserRoute,
         UserModel,
         GetAllNurseryRoute, GetOneNurseryRoute, PostCreateNurseryRoute, PutUpdateNurseryRoute, DeleteOneNurseryRoute,
