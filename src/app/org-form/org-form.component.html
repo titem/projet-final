@@ -13,21 +13,22 @@
   <div class="row" >
 
 <div class="form-box">
-  <form [formGroup]="formOrg" (ngSubmit)="creerCreche()" >
+  <form [formGroup]='formOrg' (ngSubmit)="creerCreche()" >
     <div class="form-group row">
       <label class="label2">Informations Crèche</label>
     </div>
     <div class="form-group row">
-      <label>Nom complet *</label>
+      <label>Nom complet*</label>
       <input
         class="form-control"
         type="text"
-        name="name"
         formControlName="name"
         placeholder="nom">
+      <p *ngIf="formOrg.get('name').hasError('required') && submited"
+         style="color:#EF5350; margin-left: 88%;">  Requis!</p>
     </div>
     <div class="form-group row">
-      <label>Adresse</label>
+      <label>Adresse*</label>
       <div class="col-1"></div>
       <div class="col-11">
         <div class="row">
@@ -36,16 +37,19 @@
             <input
               class="form-control"
               formControlName="ville"
-              type="text"
-              name="name"
-              placeholder="ville">
+              type="text">
+            <p *ngIf="formOrg.get('ville').hasError('required') && submited"
+               style="color:#EF5350; margin-left: 70%;">  Requis!</p>
           </div>
           <div class="col-4">
             <label class="sous-lab">Code Postal</label>
             <input
               class="form-control"
+              type="number"
               formControlName="code"
               placeholder="code">
+            <p *ngIf="formOrg.get('code').hasError('required') && submited"
+               style="color:#EF5350; margin-left: 40%;">  Requis!</p>
           </div>
         </div>
         <div class="row">
@@ -54,20 +58,22 @@
             <input
               class="form-control"
               type="text"
-              formControlName="rue"
-              name="name"
-              placeholder="prénom nom">
+              formControlName="rue">
+            <p *ngIf="formOrg.get('rue').hasError('required') && submited"
+               style="color:#EF5350; margin-left: 80%;">  Requis</p>
           </div>
         </div>
       </div>
     </div>
     <div class="form-group row">
-      <label>Email</label>
+      <label>Email*</label>
       <input
         class="form-control"
         type="email"
         formControlName="email"
         placeholder="email">
+      <p *ngIf="formOrg.get('email').hasError('email') && formOrg.get('email').dirty"
+         style="color:#EF5350; margin-left: 70%;">  Invalide!</p>
     </div>
     <div class="form-group row">
       <label>Site Internet</label>
@@ -78,12 +84,14 @@
         placeholder="site">
     </div>
     <div class="form-group row">
-      <label>Téléphone</label>
+      <label>Téléphone (ex:0788982659)</label>
       <input
         class="form-control"
         type="email"
-        formControlName="tel"
-        placeholder="confirmaton adresse email">
+        formControlName="tel">
+
+      <p *ngIf="formOrg.get('tel').hasError('isValid')"
+         style="color:#EF5350; margin-left: 70%;">  Invalide</p>
     </div>
     <div class="form-group row">
       <label>Horaires D'ouverture</label>
@@ -101,40 +109,50 @@
     </div>
     <div class="form-group row">
       <div class="col-6">
-        <label>Age Limite</label>
+        <label>Age Limite (entre 0 et 9)</label>
         <input
           class="form-control col-9"
-          type="text"
+          type="number"
+          name="age"
           formControlName="age">
+        <p *ngIf="formOrg.get('age').hasError('min')"
+           style="color:#EF5350; margin-left: 50%;">  Invalide!</p>
+        <p *ngIf="formOrg.get('age').hasError('max')"
+           style="color:#EF5350; margin-left: 50%;">  Invalide!</p>
       </div>
       <div class="col-6">
         <label>Capacité</label>
         <input
           class="form-control col-9"
-          type="text"
+          type="number"
           formControlName="capacity">
+        <p *ngIf="formOrg.get('capacity').hasError('min')"
+           style="color:#EF5350; margin-left: 50%;">  Invalide!</p>
       </div>
       <div class="col-6">
         <label>Effectif</label>
         <input
           class="form-control col-9"
-          type="text"
+          type="number"
           formControlName="effect">
+        <p *ngIf="formOrg.get('effect').hasError('min')"
+           style="color:#EF5350; margin-left: 50%;">  Invalide!</p>
       </div>
     </div>
     <div class="form-group row">
       <label>Description</label>
       <input
         class="form-control"
-        type="email"
+        type="text"
         formControlName="desc">
     </div>
     <div class="form-group row">
-      <label>Photo</label>
+      <label>Photo*</label>
       <input
         class="form-control"
-        type="email"
         formControlName="photo">
+      <p *ngIf="formOrg.get('photo').hasError('required') && submited"
+         style="color:#EF5350; margin-left: 85%;"> Requis!</p>
     </div>
     <br>
     <button class="btn btn-primary" type="submit">Ajouter</button>

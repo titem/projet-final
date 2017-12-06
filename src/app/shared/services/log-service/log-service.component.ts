@@ -24,7 +24,7 @@ export class LogService implements OnInit {
   ngOnInit() {
   }
 
-  
+
 
   getCurrentUser(): BehaviorSubject<Personne> {
     return this.user;
