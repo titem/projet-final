@@ -10,13 +10,13 @@ export class OrgService implements OnInit {
   public Orgs: BehaviorSubject<Organisation[]> = new BehaviorSubject(null);
 
   constructor() {
-    const user = new Personne('Wilson', 'Nicky', 'niki.wil@gmail.com', '07 25 36 28 24', 'Enseignant', 'Nancy', 'https://www.nancy.fr/fileadmin/_processed_/6/2/csm_2016-06-inauguration-creche-familiale_c2d58cb2af.jpg', '');
+    const user = new Personne('Wilson Nicky', '', 'niki.wil@gmail.com', '07 25 36 28 24', 'Enseignant', 'Nancy', 'https://www.nancy.fr/fileadmin/_processed_/6/2/csm_2016-06-inauguration-creche-familiale_c2d58cb2af.jpg', '');
     const adr = new Adresse ('Laxoviennes', 54520, 'vendoeuvres');
     const comments = new Comment(  3, 'Crèche à service moyen', user);
 
     this.Orgs.next(
       [
-        new Organisation('Cerèche les petits malins',
+        new Organisation('Crèche les petits malins',
                          '23, site province, Laxou, 54520',
                          'http://www.rue89strasbourg.com/wp-content/uploads/2012/04/creche_parentale-UNE-464x309.jpg',
                          'petitsmalins@gmail.com', '06 05 89 32 36', 'http://www.rue89strasbourg.com',
@@ -27,7 +27,7 @@ export class OrgService implements OnInit {
                           'Enfant pas atteind par une maladie contagieuse',
                            20,
                            '6', null),
-                          new Organisation('Cerèche hello kids',
+                          new Organisation('Crèche hello kids',
                             '80, Malzéville, Nancy, 54540',
                             'http://www.franchise-enfants.fr/images/zoom/ouvrir-une-micro-creche.jpg',
                             'hello.kids@gmail.com', '06 05 00 32 16',
